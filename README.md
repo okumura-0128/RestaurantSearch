@@ -9,7 +9,7 @@ RestaurantSercher
 -最小限のページ数
 -レスポンシブデザイン
 ### URL
-
+https://gms.gdl.jp/~sora/RestaurantSearch/#
 ### 開発期間
 7時間
 
