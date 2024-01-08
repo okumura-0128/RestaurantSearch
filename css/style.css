@@ -1,0 +1,579 @@
+@charset "UTF-8";
+
+html {
+	overflow: auto;
+}
+body {
+	overflow: hidden;
+    font-family: "Yu Gothic","游ゴシック";
+    position: relative;
+    min-height: 100vh;
+
+}
+
+
+/*========= タイピング ===============*/
+
+.TextTyping span {
+    display: none;
+  }
+  
+  /*文字列後ろの線の設定*/
+  .TextTyping::after {
+    content: "|";
+    animation: typinganime .8s ease infinite;
+  }
+  
+  @keyframes typinganime{
+    from{opacity:0}
+    to{opacity:1}
+  }
+
+
+
+
+
+.btnlinestretches2{
+    /*線の基点とするためrelativeを指定*/
+  position:relative;
+    /*ボタンの形状*/  
+  color:#333;
+    padding: 10px 30px;
+  
+  display:inline-block;
+    text-decoration: none;
+    outline: none;
+}
+
+/*線の設定*/
+.btnlinestretches2::before,
+.btnlinestretches2::after {
+  content:'';
+    /*絶対配置で線の位置を決める*/
+  position:absolute;
+    /*事前に出現させる線の形状*/
+  border:solid #333;
+  width:10px;
+  height:10px;
+    /*アニメーションの指定*/
+  transition:all 0.3s ease-in-out;
+}
+
+.btnlinestretches2::before{
+    /*事前に出現させる線の位置*/
+  top:0;
+  left:0;
+    /*事前に出現させる線の形状*/
+  border-width:2px 0 0 2px;
+}
+
+.btnlinestretches2::after{
+    /*事前に出現させる線の位置*/
+  bottom:0;
+  right:0;
+    /*事前に出現させる線の形状*/
+  border-width:0 2px 2px 0;
+}
+
+/*hoverした際の線の形状*/
+.btnlinestretches2:hover::before,
+.btnlinestretches2:hover::after{
+  width:calc(100% - 2px);
+  height:calc(100% - 2px);
+  border-color:#666
+}
+
+
+@media (min-width: 1500px){
+    .bar_area{
+        max-width: 1200px;
+        width: 70vw;
+        margin-top: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+    
+    #map{
+        width:80%;
+        height: 500px;
+    }
+
+
+    .pc_responsive{
+        min-width: 600px;
+        max-width: 60vw;
+    }
+    
+    .box{
+        /*
+        max-width: 60vw;
+        min-width: 600px;*/
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .tag{
+        max-width: 1200px;
+        min-width: 600px;
+        width: 80vw;
+        min-height: 1em;
+        margin-bottom: -16px;
+    }
+
+    .form{
+        width:80%;
+        margin: 0 auto;
+    }
+    .items{
+        text-align: left;
+    }
+
+    .close{
+        display: none;
+    }
+    .td_icon{
+        display: none;
+    }
+}
+
+
+
+
+
+@media (min-width: 660px){
+    .bar_area{
+        max-width: 1200px;
+        width: 70vw;
+        margin-top: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+    
+    #map{
+        width:80%;
+        height: 500px;
+    }
+
+    .pc_responsive{
+
+        /*max-width: 70vw;*/
+    }
+    .box{
+        /*max-width: 70vw;*/
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .tag{
+        max-width: 1200px;
+        min-width: 600px;
+        width: 80vw;
+        min-height: 1em;
+        margin-bottom: -16px;
+    }
+
+    .list_responsive{
+        width: 80vw;
+        margin: 0 auto;
+        max-width: 1200px;
+        min-width: 1200px;
+    }
+    .form{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .items{
+        text-align: left;
+    }
+
+    .close{
+        display: none;
+    }
+    .td_icon{
+        display: none;
+        
+    }
+
+}
+
+.sp_table{
+    display: none;
+}
+
+/*SP*/
+@media (max-width: 660px){
+    .bar_area{
+        width: 100vw;
+    }
+
+    .pc_table{
+        display: none;
+    }
+    .sp_table{
+        display: block;
+    }
+    
+    #map{
+        width:98%;
+        height: 50vh;
+    }
+    .pc_responsive{
+        width: 100vw;
+    }
+    .box{
+        width: 100vw;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .tag{
+
+        width: 100vw;
+        min-height: 1em;
+        margin-bottom: -16px;
+    }
+
+    .tag nav{
+        width: 350px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .list_responsive{
+        width: 100vw;
+        margin: 0 auto;
+    }
+
+    .item{
+        text-align: left;
+    }
+    .items{
+        text-align: center;
+    }
+    .close{
+
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: block;
+        text-align: center;
+    }
+    .close i{
+        font-size: 3em;
+        color: rgb(64, 98, 150);
+    }
+    .content{
+        overflow-x: scroll;
+    }
+    .td_str{
+        display: none;
+    }
+    .td_icon{
+        text-align: center;
+    }
+}
+
+#map{
+    margin: 0 auto;
+    
+}
+
+
+.search{
+
+    margin: 0 auto;
+}
+
+.search_area{
+    box-shadow:0px 0px 10px;
+    position:relative;
+    
+}
+
+
+
+.form td{
+    padding: 5px 10px 5px 10px;
+    vertical-align:top;
+}
+
+.local_search{
+    margin: 0 auto;
+    display:none;
+    box-shadow:0px 0px 10px;
+}
+
+.local_search_select{
+    transform: translate(2%,10%)
+}
+
+#place{
+    margin-bottom: 120px;
+}
+
+
+.popup {
+    display:none;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.5);
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 1;
+}
+.content{
+
+    width: 60vw;
+    max-width: 1000px;
+    min-height: 400px;
+    min-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+
+    /*margin: 30vh auto;*/
+    padding: 0;
+    background-color: #ffffff;
+    color: #666666;
+    /*position:fixed;*/
+    z-index: 2;
+
+    padding: 20px;
+}
+
+
+.content h3{
+    text-align: center;
+}
+
+.content img{
+    object-fit: cover;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.detail_area{
+    margin-top: 20px;
+}
+
+.detail_table{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.td1{
+    width:10em;
+}
+
+.detail_table td {
+	background: rgb(199, 199, 199);
+    padding: 5px;
+}
+
+.detail_table tr:nth-child(odd) td {
+	background: #fff;
+}
+
+
+.item{
+    display: inline-block;
+    letter-spacing: normal;
+    width: calc(30% - 2px);
+    max-width: 100%;
+    min-width: 300px;
+    min-height: 360px;
+    border: 1px solid rgba(0,0,0,.1);
+    margin: 20px;
+    padding: .8em;
+    vertical-align: top;
+}
+.item img{
+    object-fit: cover;
+    width: calc(100% - 2px);
+    height: 200px;
+}
+
+.item img:hover{
+    box-shadow:0px 0px 10px;
+}
+
+
+.search li{
+    list-style-type: none;
+    display: inline-block;
+
+}
+
+.map_item img:hover{
+    box-shadow:0px 0px 10px;
+}
+
+
+
+.tag_current{
+    box-shadow:0px 0px 10px;
+    position:relative;
+}
+
+.tag ul{
+    margin-left: -20px;
+}
+
+
+
+#tag1{
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+#tag1:hover{
+    background-color: rgb(255, 255, 255);
+}
+
+
+#tag2{
+    background-color: rgb(255, 255, 255);
+    margin-left: -4px;
+    padding: 10px;
+}
+#tag2:hover{
+    background-color: rgb(255, 255, 255);
+}
+
+.center{
+    min-width: 30vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/*== 無限に波紋が広がる */
+
+.btnripple2{
+    /*波紋の基点とするためrelativeを指定*/
+  position: relative;
+    /*波紋の形状*/
+  display:inline-block;
+  background:#333;
+  width:70px;
+  height:70px;
+  border-radius: 50%;
+  color:#ccc;
+    outline: none;
+    /*アニメーションの設定*/
+    transition: all .3s;
+}
+
+/*hoverした際の背景色の設定*/
+.btnripple2:hover{
+  background:#666;  
+}
+
+/*波形を2つ設定*/
+.btnripple2::after,
+.btnripple2::before {
+    content: '';
+    /*絶対配置で波形の位置を決める*/
+    position: absolute;
+    left: -25%;
+    top: -25%;
+    /*波形の形状*/
+    border: 1px solid #333;
+    width: 150%;
+    height: 150%;
+    border-radius: 50%;
+    /*はじめは不透明*/
+    opacity: 1;
+    /*ループするアニメーションの設定*/
+    animation:1s circleanime linear infinite;
+}
+
+/*波形の2つ目は0.5秒遅らせてアニメーション*/
+.btnripple2::before {
+    animation-delay:.5s; 
+}
+
+/*波形のアニメーション*/
+@keyframes circleanime{
+  0%{
+    transform: scale(0.68);
+  }
+  100%{
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/*中央矢印*/
+.btnripple2 span::after {
+    content: '';
+    /*絶対配置で矢印の位置を決める*/
+    position: absolute;
+    top: 38%;
+    left: 45%;
+    /*矢印の形状*/
+    border: 14px solid transparent;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-left-color: #fff;
+}
+
+
+/* 
+.btn-circle-stitch {
+    display: inline-block;
+    text-decoration: none;
+    background: #87befd;
+    color: #FFF;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #87befd;
+    border: dashed 1px #FFF;
+    transition: .4s;
+  }
+  
+  .btn-circle-stitch:hover {
+    background: #668ad8;
+    box-shadow: 0px 0px 0px 5px #668ad8;
+    text-decoration: none;
+  } */
+
+
+  .none_message{
+      font-size: 30px;
+      text-align: center;
+      margin-top: 15%;
+      padding-bottom: 15%;
+  }
+
+  .search_btn1{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    transform: translateY(37px);
+  }
+
+  .search_btn2{
+    margin-top: 20px;
+  }
+
+  .btn2_div{
+    transform: translate(2%,10%)
+      
+  }
+#button2{
+    transform: translate(2%,10px)
+}
+
+.btnripple1 { 
+    transform: translate(2%,10px)
+   }
