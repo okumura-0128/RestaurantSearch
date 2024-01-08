@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>RestaurantSercher</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+    <link rel='stylesheet' href='./css/style.css'>
+    <link rel='stylesheet' href='./css/bootstrap-reboot.css'>
+    <link rel='stylesheet' href='./css/pagination.css'>
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/7-1-34/css/7-1-34.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="https://kit.fontawesome.com/befd99437d.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+ 
+
+
+    <p class="TextTyping">ABCDEFGHIJKLMN</p>
+
+    <p><br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓
+    </p>
+
+
+    <p class="TextTyping">ABCDEFGHIJKLMN</p>
+
+
+    <div class="bar_area">
+        <div class = "search pc_responsive">
+            <div class = "tag">
+
+
+                <nav>
+                <ul>
+                    <li id ="tag1" onclick ="tag_change(0)" class="tag_current">
+                        <a href="#" class="btnlinestretches2">条件検索</a>
+                    </li>
+                    <li id ="tag2" onclick ="tag_change(1)">
+                        <a href="#" class="btnlinestretches2">現在地から検索</a>
+                    </li>
+                </ul>
+                </nav>
+            </div>
+            
+            <div class ="search_area box pc_responsive" id ="box1">
+
+                
+                
+                <form action="" method="post" id="select_form" name = "search" class="form">
+                    <h2>条件入力検索</h2>
+                    <table>
+                        <tr>
+                            <td>地域：</td>
+                            <td><select name="area" id = "area" ></select></td>
+                        </tr>
+                        <tr>
+                            <td>キーワード：</td>
+                            <td><input type="text" name = "keyword"></td>
+                        </tr>
+                        <tr>
+                            <td>予算：</td>
+                            <td>
+                                <select name="budget" id = "budget" >
+                                <option value="">指定なし</option>
+                                </select>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>人数：</td>
+                            <td><input type="text" name = "party_capacity"></td>
+                        </tr>
+
+                    </table>
+
+                    
+                    <br>
+                    <table class = "pc_table">
+                        
+                        <tr>
+                            <td>その他の条件：</td>
+                        </tr>
+                        <tr>
+                    
+                            <td>
+                                <input type="checkbox" name="need" value="wifi">WiFi
+                            </td>
+                      
+                            <td>
+                                <input type="checkbox" name="need" value="course">コースあり
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="free_drink">飲み放題
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="free_food">食べ放題
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="private_room">個室あり
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="horigotatsu">掘りごたつあり
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="tatami">座敷あり
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="cocktail">カクテル充実
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="shochu">焼酎充実
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="sake">日本酒充実
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="wine">ワイン充実
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="card">カード可
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="non_smoking">禁煙席
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="charter">貸切可
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="ktai">携帯電話OK
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="parking">駐車場あり
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="barrier_free">バリアフリー
+                            </td>
+
+                            <td>
+                                <input type="checkbox" name="need" value="night_view">夜景がキレイ
+                            </td>
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                <input type="checkbox" name="need" value="lunch">ランチあり
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="midnight">23時以降も営業
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="midnight_meal">23時以降食事OK
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="english">英語メニューあり
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="pet">ペット可
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="child">お子様連れOK
+                            </td>
+                        </tr>
+                    </table>
+                    <table class = "sp_table">
+                        
+                        <tr>
+                            <td>他の条件：</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="wifi">WiFi
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="course">コースあり
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="free_drink">飲み放題
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="free_food">食べ放題
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="private_room">個室あり
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="horigotatsu">掘りごたつあり
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="tatami">座敷あり
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="cocktail">カクテル充実
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="shochu">焼酎充実
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="sake">日本酒充実
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="wine">ワイン充実
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="card">カード可
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="non_smoking">禁煙席
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="charter">貸切可
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="ktai">携帯電話OK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="parking">駐車場あり
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="barrier_free">バリアフリー
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="sommelier">ソムリエがいる
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="night_view">夜景がキレイ
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="lunch">ランチあり
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="midnight">23時以降も営業
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="midnight_meal">23時以降食事OK
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="english">英語メニューあり
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="need" value="pet">ペット可
+                            </td>
+                            <td>
+                                <input type="checkbox" name="need" value="child">お子様連れOK
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="btn2_div">
+                        <a href="javascript:search.submit()" class = "btnripple2" id = "button2"><br>検索</br></a>
+                    </div>
+                    
+                </form>
+            </div>
+
+
+
+            <div class = "local_search box pc_responsive" id ="box2">
+                <div class = "center">
+                    <h2>現在地からの検索</h2>
+                    <div id="map"></div>
+                    
+                    <form action="" method="post" id="select_form" name = "local" class = "local_search_select">
+                        検索範囲：
+                        <select name="range" id = "date" >
+                            <!--<option disabled selected value></option>-->
+                            
+                            <option value="1">300m</option>
+                            <option value="2">500m</option>
+                            <option value="3">1000m</option>
+                            <option value="4">2000m</option>
+                            <option value="5">3000m</option>
+
+                        </select>　
+                        <a href="javascript:local.submit()" class = "btnripple2" id = "button1"><br>検索</br></a>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        
+
+    </div>
+
+   
+
+
+    <h2 id = 'test'></h2>
+    <div id = "place" class = "list_responsive">
+            <!--<input type="radio" name="place" onclick="main_content();"><span></span>-->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/taipingu.js"></script>
+</body>
+<script src="./js/main.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC09wP1gkLYvzQmI-uUUoupPnjar7zNGTs&callback=initMap"></script>
+<script type="text/javascript" src="./js/jquery.pagination.js"></script>
+
+</html>
