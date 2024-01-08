@@ -12,7 +12,7 @@
 }
 .pagination .next-page {
     display: inline-block;
-    margin-left: 25px;
+    margin-left: 10px;
 
 }
 .pagination .prev-page button {
@@ -61,6 +61,7 @@
 .pagination ul {
     text-align: center;
     display: flex;
+    
 }
 .pagination p{
 
@@ -70,7 +71,8 @@
     display: inline-block;
     border: 1px solid;
     width: 1.5em;
-    margin-right: 10px;
+    margin-right: 5px;
+    margin-left: 15px;
     text-align: center;
 }
 .pagination li a {
