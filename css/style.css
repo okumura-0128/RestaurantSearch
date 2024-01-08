@@ -13,6 +13,10 @@ body {
 
 
 /*========= タイピング ===============*/
+.TextTyping{
+    font-size: 50px
+}
+
 
 .TextTyping span {
     display: none;
@@ -577,3 +581,4 @@ body {
 .btnripple1 { 
     transform: translate(2%,10px)
    }
+
